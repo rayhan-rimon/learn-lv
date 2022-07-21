@@ -17,5 +17,6 @@
         <footer class="container-fluid text-center fixed-bottom bg-dark">
             @include('includes.footer')
         </footer>
+        @include('includes.scripts')
     </body>
 </html>
