@@ -14,17 +14,25 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('home',[
+        'page_name'=> 'Home Page'
+    ]);
 })->name('home');
 
 Route::get('/about-page', function () {
-    return view('about');
+    return view('about',[
+        'page_name'=> 'About Page'
+    ]);
 })->name('about');
 
 Route::get('/contact-us', function () {
-    return view('contact');
+    return view('contact',[
+        'page_name'=> 'Contact Page'
+    ]);
 })->name('contact');
 
 Route::get('/service-page', function () {
-    return view('service');
+    return view('service',[
+        'page_name'=> 'Service Page'
+    ]);
 })->name('service');
