@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,7 +14,25 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/', function (Request $request) {
+    dd(
+        $request->path(),  // path name
+        $request->is('/'), // 1 0r 0
+
+        $request->fullUrl(),
+        $request->host(),
+        $request->httpHost(),
+        $request->schemeAndHttpHost(),
+
+        $request->routeIs('home'),  // 1 or 0
+        $request->header('X-Header-Name'),
+        $request->header('X-Header-Name', 'default'),
+        $request->bearerToken(),  // Used in API building
+
+        $request->ip(),
+        $request->prefers(['text/html', 'application/json']),
+    );
+
     return view('home',[
         'page_name'=> 'Home Page'
     ]);
